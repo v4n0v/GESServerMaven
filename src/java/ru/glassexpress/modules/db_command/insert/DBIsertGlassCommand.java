@@ -24,7 +24,7 @@ public class DBIsertGlassCommand extends DBInsertCommand {
         ps.setInt(8, parser.getIntValue("glass_factory"));
         ps.setInt(9, parser.getIntValue("insert_method"));
         ps.setFloat(10, parser.getFloatValue("insert_price"));
-
+        ps.setInt(11, parser.getIntValue("body_type"));
     }
 
 }

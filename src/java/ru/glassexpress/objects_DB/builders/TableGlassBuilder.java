@@ -21,7 +21,7 @@ public class TableGlassBuilder extends GlassBuilder{
         this.glassOptTitle = glassOptTitle;
         return this;
     }
-    public TableGlassBuilder setInsertCarTitle(String carTitle) {
+    public TableGlassBuilder setCarTitle(String carTitle) {
         this.carTitle = carTitle;
         return this;
     }

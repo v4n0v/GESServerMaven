@@ -9,10 +9,7 @@ import ru.glassexpress.modules.db_command.insert.DBInsertGenerationCommand;
 import ru.glassexpress.modules.db_command.insert.DBInsertMarkCommand;
 import ru.glassexpress.modules.db_command.insert.DBInsertModelCommand;
 import ru.glassexpress.modules.db_command.insert.DBIsertGlassCommand;
-import ru.glassexpress.modules.db_command.select.car.DBSelectBodyTypeCommand;
-import ru.glassexpress.modules.db_command.select.car.DBSelectGenerationCommand;
-import ru.glassexpress.modules.db_command.select.car.DBSelectMarkCommand;
-import ru.glassexpress.modules.db_command.select.car.DBSelectModelCommand;
+import ru.glassexpress.modules.db_command.select.car.*;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassCommand;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassFactoryCommand;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassOption;
@@ -46,6 +43,9 @@ public class DBCommandFactory implements DBFactoryMethod {
             return new DBSelectGlassOption(req);
         } else if (action.equals("list") && target.equals("glass_factory")) {
             return new DBSelectGlassFactoryCommand(req);
+        } else if (action.equals("list") && target.equals("insert_class")) {
+            return new DBSelectInsertClassCommand(req);
+
 
         } else if (action.equals("insert") && target.equals("mark")) {
             return new DBInsertMarkCommand(req);

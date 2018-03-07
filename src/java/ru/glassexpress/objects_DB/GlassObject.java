@@ -3,6 +3,7 @@ package ru.glassexpress.objects_DB;
 import com.google.gson.JsonElement;
 
 public class GlassObject extends BaseObject {
+
     private int id;
 
     private int carId;
@@ -15,6 +16,29 @@ public class GlassObject extends BaseObject {
     private float insertPrice;
     private int countWh1;
     private int countWh2;
+
+    private String insertMethodTitle;
+    private String glassFactoryTitle;
+    private String glassTypeTitle;
+    private String glassOptTitle;
+    private String carTitle;
+
+    public int getBodyTypeId() {
+        return bodyTypeId;
+    }
+
+    public void setBodyTypeId(int bodyTypeId) {
+        this.bodyTypeId = bodyTypeId;
+    }
+
+    private int bodyTypeId;
+
+
+    public void setBodyTypeTitle(String bodyTypeTitle) {
+        this.bodyTypeTitle = bodyTypeTitle;
+    }
+
+    private String bodyTypeTitle;
 
     public String getInsertMethodTitle() {
         return insertMethodTitle;
@@ -56,11 +80,6 @@ public class GlassObject extends BaseObject {
         this.carTitle = carTitle;
     }
 
-    private String insertMethodTitle;
-    private String glassFactoryTitle;
-    private String glassTypeTitle;
-    private String glassOptTitle;
-    private String carTitle;
 
 //    public String getCarTitle() {
 //        return carTitle;
@@ -153,7 +172,6 @@ public class GlassObject extends BaseObject {
     }
 
 
-
     public int getCarId() {
         return carId;
     }
@@ -170,7 +188,6 @@ public class GlassObject extends BaseObject {
     public void setAlert(int alert) {
         this.alert = alert;
     }
-
 
 
     public int getInsertMethod() {
@@ -202,7 +219,7 @@ public class GlassObject extends BaseObject {
         obj1.addProperty("carId", carId);
         obj1.addProperty("carTitle", carTitle);
         obj1.addProperty("glassTypeId", glassTypeId);
-        obj1.addProperty("glassTypeTitle",glassTypeTitle);
+        obj1.addProperty("glassTypeTitle", glassTypeTitle);
         obj1.addProperty("glassOptionId", glassOptionId);
         obj1.addProperty("glassOptTitle", glassOptTitle);
         obj1.addProperty("description", description);
@@ -216,8 +233,11 @@ public class GlassObject extends BaseObject {
         obj1.addProperty("glassFactoryTitle", glassFactoryTitle);
         obj1.addProperty("insertMethod", insertMethod);
         obj1.addProperty("insertMethodTitle", insertMethodTitle);
+        obj1.addProperty("bodyType", bodyTypeId);
+        obj1.addProperty("bodyTypeTitle", bodyTypeTitle);
         return obj1;
     }
+
 
 
 }

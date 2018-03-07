@@ -5,7 +5,6 @@ import ru.glassexpress.objects_DB.GlassObject;
 
 public class GlassBuilder {
 
-
     public GlassBuilder setId(int id) {
         this.id = id;
         return this;
@@ -93,11 +92,18 @@ public class GlassBuilder {
         this.glassOptTitle = glassOptTitle;
         return this;
     }
-    public GlassBuilder setInsertCarTitle(String carTitle) {
+    public GlassBuilder setCarTitle(String carTitle) {
         this.carTitle = carTitle;
         return this;
     }
-
+    public GlassBuilder setBodyTypeTitle(String bodyTypeTitle) {
+        this.bodyTypeTitle = bodyTypeTitle;
+        return this;
+    }
+    public GlassBuilder setBodyType(int bodyType) {
+        this.bodyType=bodyType;
+        return this;
+    }
     private int id;
     private int carId;
     private int glassType;
@@ -112,21 +118,28 @@ public class GlassBuilder {
     private  int glassFactory;
     private  int insertMethod;
     private int alert;
+    private int bodyType;
     private String carTitle;
 
     private String insertMethodTitle;
     private String glassFactoryTitle;
     private String glassTypeTitle;
     private String glassOptTitle;
-
+    private String bodyTypeTitle;
 
 
     public GlassObject build() {
         GlassObject table = new GlassObject();
         table.setId(id);
         table.setCarId(carId);
+        table.setCarTitle(carTitle);
+
         table.setGlassTypeId(glassType);
+        table.setGlassTypeTitle(glassTypeTitle);
+
+        table.setGlassOptTitle(glassOptTitle);
         table.setGlassOptionId(glassOption);
+
         table.setDescription(description);
         table.setPrice(price);
         table.setPriceIn(priceIn);
@@ -134,14 +147,19 @@ public class GlassBuilder {
         table.setCountRemainder(countRemainder);
         table.setCountWh1(countWh1);
         table.setCountWh2(countWh2);
+
         table.setGlassFactory(glassFactory);
-        table.setInsertMethod(insertMethod);
-        table.setAlert(alert);
-        table.setCarTitle(carTitle);
         table.setGlassFactoryTitle(glassFactoryTitle);
-        table.setGlassOptTitle(glassOptTitle);
-        table.setGlassTypeTitle(glassTypeTitle);
+
+        table.setInsertMethod(insertMethod);
         table.setInsertMethodTitle(insertMethodTitle);
+        table.setAlert(alert);
+        table.setBodyTypeId(bodyType);
+        table.setBodyTypeTitle(bodyTypeTitle);
+
+
+
+
         return table;
     }
 
