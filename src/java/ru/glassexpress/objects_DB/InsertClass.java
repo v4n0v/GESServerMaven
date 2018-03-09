@@ -59,6 +59,7 @@ public class InsertClass extends BaseObject{
     @Override
     public JsonElement toJSONObject() {
         obj1.addProperty("objClass", objectClass);
+        obj1.addProperty("id", id);
         obj1.addProperty("insertFront", insertFront);
         obj1.addProperty("insertRear", insertRear);
         obj1.addProperty("insertSide", insertSide);

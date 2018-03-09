@@ -12,6 +12,15 @@ public class GenerationObj extends BaseObject{
     private int yearTo;
     private  int modelID;
     private int id;
+    private int idInsert;
+    public int getIdInsert() {
+        return idInsert;
+    }
+
+    public void setIdInsert(int idInsert) {
+        this.idInsert = idInsert;
+    }
+
 
     public int getYearFrom() {
         return yearFrom;
@@ -38,12 +47,13 @@ public class GenerationObj extends BaseObject{
         return modelID;
     }
 
-    public GenerationObj(int id, int yearFrom, int yearTo, int modelID) {
+    public GenerationObj(int id, int yearFrom, int yearTo, int modelID, int idInsert) {
         super("generation");
         this.id=id;
         this.yearFrom = yearFrom;
         this.yearTo = yearTo;
         this.modelID = modelID;
+        this.idInsert = idInsert;
     }
 
     public GenerationObj(int yearFrom, int yearTo) {
@@ -62,7 +72,7 @@ public class GenerationObj extends BaseObject{
         obj1.addProperty("yearFrom", yearFrom);
         obj1.addProperty("yearTo", yearTo);
         obj1.addProperty("modelID", modelID);
-
+        obj1.addProperty("idInsert", idInsert);
 
 
         return obj1;

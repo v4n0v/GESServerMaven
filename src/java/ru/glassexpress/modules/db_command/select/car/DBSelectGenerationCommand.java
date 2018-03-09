@@ -22,7 +22,7 @@ public class DBSelectGenerationCommand extends DBSelectCommand {
     protected void queryExecute() throws SQLException {
         System.out.println();
 
-        composite.addComponent(new GenerationObj(rs.getInt("id_car"), rs.getInt("year_from"), rs.getInt("year_to"), rs.getInt("id_car")));
+        composite.addComponent(new GenerationObj(rs.getInt("id_car"), rs.getInt("year_from"), rs.getInt("year_to"), rs.getInt("id_model"), rs.getInt("id_auto_insert_class")));
 
     }
 }
