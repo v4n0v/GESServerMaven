@@ -3,6 +3,7 @@ package ru.glassexpress.modules.factory;
 import ru.glassexpress.modules.RequestParser;
 import ru.glassexpress.modules.db_command.*;
 import ru.glassexpress.modules.db_command.delete.DBDeleteGenerationCommand;
+import ru.glassexpress.modules.db_command.delete.DBDeleteGlassCommand;
 import ru.glassexpress.modules.db_command.delete.DBDeleteMarkCommand;
 import ru.glassexpress.modules.db_command.delete.DBDeleteModelCommand;
 import ru.glassexpress.modules.db_command.insert.DBInsertGenerationCommand;
@@ -67,7 +68,8 @@ public class DBCommandFactory implements DBFactoryMethod {
             return new DBDeleteModelCommand(req);
         } else if (action.equals("delete") && target.equals("mark")) {
             return new DBDeleteMarkCommand(req);
-
+        } else if (action.equals("delete") && target.equals("glass")) {
+            return new DBDeleteGlassCommand(req);
 
         } else if (action.equals("upd") && target.equals("insert_class")) {
             return new DBUpdateInsertClass(req);

@@ -13,9 +13,9 @@ public class DBInsertGenerationCommand extends DBInsertCommand {
     @Override
     protected void queryExecute() throws SQLException {
         System.out.println("insert generation");
-        int yearFrom = parser.getIntValue("yearFrom");
+
         ps.setInt(1, parser.getIntValue("yearFrom"));
         ps.setInt(2, parser.getIntValue("yearTo"));
-        ps.setString(3, parser.getStringValue("model"));
+        ps.setInt(3, parser.getIntValue("model"));
     }
 }

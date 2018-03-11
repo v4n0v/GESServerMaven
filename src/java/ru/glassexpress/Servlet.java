@@ -33,7 +33,12 @@ public class Servlet extends HttpServlet {
             if (answerJson != null) {
                 PrintWriter out = response.getWriter();
                 out.println(answerJson);
+                System.out.println("======================================");
+                System.out.println("sending json");
+                System.out.println(answerJson);
                 out.close();
+                System.out.println("sending json complete");
+                System.out.println("======================================");
             }
         }
 

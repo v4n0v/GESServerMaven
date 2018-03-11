@@ -15,6 +15,14 @@ public class GlassBuilder {
 //        return this;
 //    }
 
+
+    String optListString;
+
+    public GlassBuilder setOptListString(String optListString) {
+        this.optListString = optListString;
+        return this;
+    }
+
     public GlassBuilder setGlassTypeId(int glassType) {
         this.glassType = glassType;
         return this;
@@ -134,6 +142,7 @@ public class GlassBuilder {
         table.setCarId(carId);
         table.setCarTitle(carTitle);
 
+        table.setOptListString(optListString);
         table.setGlassTypeId(glassType);
         table.setGlassTypeTitle(glassTypeTitle);
 

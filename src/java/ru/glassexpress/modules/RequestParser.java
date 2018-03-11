@@ -35,12 +35,6 @@ public class RequestParser {
     public String getStringValue(String key){
         String decoded=requestMap.get(key);
 
-//        try {
-//            decoded = URLDecoder.decode(decoded, "UTF-8");
-//            System.out.println("decoded value = "+decoded);
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
         return decoded;
     }
 

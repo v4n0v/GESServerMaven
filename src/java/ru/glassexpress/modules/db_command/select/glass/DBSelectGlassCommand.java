@@ -40,6 +40,7 @@ public class DBSelectGlassCommand extends DBSelectCommand {
                 .setInsertMethodTitle(rs.getString("title_insert_method"))
                 .setBodyType(rs.getInt("id_body_type"))
                 .setBodyTypeTitle(rs.getString("type_title"))
+                .setOptListString(rs.getString("opt_list_json"))
                 .build();
 
 

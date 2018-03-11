@@ -31,9 +31,9 @@ public abstract class DBInsertCommand extends DBCommand{
                 disconnect();
             }
         } catch (SQLException e) {
-
-            e.printStackTrace();
             composite.addComponent(new ErrorObject());
+            e.printStackTrace();
+
             return composite;
         }
         composite.addComponent(new OkObject());

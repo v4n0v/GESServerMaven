@@ -2,6 +2,8 @@ package ru.glassexpress.objects_DB;
 
 import com.google.gson.JsonElement;
 
+import java.util.List;
+
 public class GlassObject extends BaseObject {
 
     private int id;
@@ -22,6 +24,19 @@ public class GlassObject extends BaseObject {
     private String glassTypeTitle;
     private String glassOptTitle;
     private String carTitle;
+
+
+    public String getOptListString() {
+        return optListString;
+    }
+
+    public void setOptListString(String optListString) {
+        this.optListString = optListString;
+    }
+
+    private String optListString;
+
+
 
     public int getBodyTypeId() {
         return bodyTypeId;
@@ -211,6 +226,10 @@ public class GlassObject extends BaseObject {
     private int glassFactory;
     private int countRemainder;
 
+    private List<IdTitleObj> optList;
+    public List<IdTitleObj> getOptList() {
+        return optList;
+    }
 
     @Override
     public JsonElement toJSONObject() {
@@ -235,6 +254,7 @@ public class GlassObject extends BaseObject {
         obj1.addProperty("insertMethodTitle", insertMethodTitle);
         obj1.addProperty("bodyType", bodyTypeId);
         obj1.addProperty("bodyTypeTitle", bodyTypeTitle);
+        obj1.addProperty("optListString", optListString);
         return obj1;
     }
 
