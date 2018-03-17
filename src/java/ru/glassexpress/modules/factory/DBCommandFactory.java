@@ -31,7 +31,7 @@ public class DBCommandFactory implements DBFactoryMethod {
 
         if (action.equals("list") && target.equals("mark")) {
             return new DBSelectMarkCommand();
-        } else if (action.equals("list") && target.equals("model")) {
+        } else if (action.equals("list") && target.equals("controllers")) {
             return new DBSelectModelCommand(req);
         } else if (action.equals("list") && target.equals("generation")) {
             return new DBSelectGenerationCommand(req);
@@ -54,7 +54,7 @@ public class DBCommandFactory implements DBFactoryMethod {
 
         } else if (action.equals("insert") && target.equals("mark")) {
             return new DBInsertMarkCommand(req);
-        } else if (action.equals("insert") && target.equals("model")) {
+        } else if (action.equals("insert") && target.equals("controllers")) {
             return new DBInsertModelCommand(req);
         } else if (action.equals("insert") && target.equals("generation")) {
             return new DBInsertGenerationCommand(req);
@@ -64,7 +64,7 @@ public class DBCommandFactory implements DBFactoryMethod {
 
         } else if (action.equals("delete") && target.equals("generation")) {
             return new DBDeleteGenerationCommand(req);
-        } else if (action.equals("delete") && target.equals("model")) {
+        } else if (action.equals("delete") && target.equals("controllers")) {
             return new DBDeleteModelCommand(req);
         } else if (action.equals("delete") && target.equals("mark")) {
             return new DBDeleteMarkCommand(req);

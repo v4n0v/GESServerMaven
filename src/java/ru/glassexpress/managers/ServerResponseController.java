@@ -1,4 +1,4 @@
-package ru.glassexpress.controllers;
+package ru.glassexpress.managers;
 
 import ru.glassexpress.modules.db_command.DBCommand;
 import ru.glassexpress.modules.factory.DBCommandFactory;

@@ -16,6 +16,6 @@ public class DBInsertGenerationCommand extends DBInsertCommand {
 
         ps.setInt(1, parser.getIntValue("yearFrom"));
         ps.setInt(2, parser.getIntValue("yearTo"));
-        ps.setInt(3, parser.getIntValue("model"));
+        ps.setInt(3, parser.getIntValue("controllers"));
     }
 }

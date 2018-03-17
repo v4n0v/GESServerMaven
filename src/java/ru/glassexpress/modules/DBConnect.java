@@ -34,21 +34,26 @@ public class DBConnect {
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
+            Properties properties = new Properties();
             String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
             String user = "root";
             String pass = "12345";
+//
 
-            Properties properties = new Properties();
-            properties.setProperty("characterEncoding","UTF-8");
+//            properties.setProperty("characterEncoding","UTF-8");
+//            properties.setProperty("user", user);
+//            properties.setProperty("password", pass);
+
+//            final String jdbcUrl = "jdbc:mysql://node148803-glass-express.jelastic.regruhosting.ru/glass_express_db";
+//            final String user = "root";
+//            final String pass = "QXEoas47731";
+
+
+            properties.setProperty("useUnicode", "true");
+            properties.setProperty("characterEncoding", "UTF-8");
             properties.setProperty("user", user);
             properties.setProperty("password", pass);
 
-//            final String jdbcUrl = "jdbc:mysql://node148526-env-1571803.jelastic.regruhosting.ru/glass_express_db";
-//            final String user = "root";
-//            final String pass = "BNErnd76386";
-//            properties.setProperty("useUnicode","true");
-//            properties.setProperty("characterEncoding","UTF-8");
             return DriverManager.getConnection(jdbcUrl, properties);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

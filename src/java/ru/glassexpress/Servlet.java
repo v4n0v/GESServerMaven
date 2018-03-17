@@ -1,7 +1,7 @@
 package ru.glassexpress;
 
-import ru.glassexpress.controllers.ServerResponseController;
-import ru.glassexpress.controllers.ServerSecurityController;
+import ru.glassexpress.managers.ServerResponseController;
+import ru.glassexpress.managers.ServerSecurityController;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +46,9 @@ public class Servlet extends HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         doPost(request, response);
+    }
+    public void clickServ(){
+
     }
 
 

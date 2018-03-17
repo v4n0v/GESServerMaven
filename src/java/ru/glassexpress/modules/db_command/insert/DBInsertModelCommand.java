@@ -15,7 +15,7 @@ public class DBInsertModelCommand extends DBInsertCommand {
 
     @Override
     protected void queryExecute() throws SQLException{
-        ps.setString(1, parser.getStringValue("model"));
+        ps.setString(1, parser.getStringValue("controllers"));
         ps.setString(2, parser.getStringValue("mark"));
 
     }

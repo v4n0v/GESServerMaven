@@ -13,8 +13,8 @@ public class DBSelectGenerationCommand extends DBSelectCommand {
 
     @Override
     protected void prepareStatement() throws SQLException {
-        int a = parser.getIntValue("model");
-        ps.setInt(1,  parser.getIntValue("model"));
+        int a = parser.getIntValue("controllers");
+        ps.setInt(1,  parser.getIntValue("controllers"));
         System.out.println();
     }
 

@@ -1,4 +1,4 @@
-package ru.glassexpress.controllers;
+package ru.glassexpress.managers;
 
 public interface SecurityManagerInterface {
     void connectDB();

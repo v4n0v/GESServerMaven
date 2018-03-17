@@ -1,4 +1,4 @@
-package ru.glassexpress.controllers;
+package ru.glassexpress.managers;
 
 public class ServerSecurityController implements SecurityManagerInterface{
 
