@@ -60,12 +60,14 @@ public class Res {
     public static final String DELETE_GENERATION = "DELETE FROM car WHERE id_car = ?";
     public static final String DELETE_MODEL = "DELETE FROM auto_model WHERE id_auto_model = ?";
     public static final String DELETE_MARK = "DELETE FROM auto_mark WHERE id_auto_mark = ?";
-    ;
-    //todo допилить запрос
-    public static final String UPD_CAR_INSERT_CLASS = "UPDATE `glass_express_db`.`car` SET `id_auto_insert_class`=? WHERE `id_car`=?";
-    public static final String DELETE_GLASS = "DELETE FROM glass WHERE id_glass = ?";
 
+    public static final String UPD_CAR_INSERT_CLASS = "UPDATE `glass_express_db`.`car` SET id_auto_insert_class=? WHERE id_car=?";
+    public static final String DELETE_GLASS = "DELETE FROM glass WHERE id_glass = ?";
+    public static final String UPD_GLASS = "UPDATE glass SET id_glass_type=?, id_glass_option=?, glass_description=?, price_in=?, " +
+            "price_out=?, alert_remainder=?, id_glass_factory=?, id_insert_method=?,  insert_price=?, " +
+            "id_body_type=?, opt_list_json=? WHERE id_glass=?";
 
     /// названия колонок таблицы
+   // UPDATE `glass_express_db`.`glass` SET `price_out`='3000', `insert_price`='2500' WHERE `id_glass`='2';
 
 }

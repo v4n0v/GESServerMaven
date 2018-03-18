@@ -1,7 +1,7 @@
 package ru.glassexpress.managers;
 
 import ru.glassexpress.modules.db_command.DBCommand;
-import ru.glassexpress.modules.factory.DBCommandFactory;
+import ru.glassexpress.modules.select_command_factory.DBCommandFactory;
 import ru.glassexpress.objects_DB.Composite;
 import ru.glassexpress.objects_DB.ErrorObject;
 

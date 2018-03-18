@@ -63,10 +63,10 @@ public class GlassBuilder {
         return this;
     }
 
-    public GlassBuilder setCountRemainder(int countRemainder) {
-        this.countRemainder = countRemainder;
-        return this;
-    }
+//    public GlassBuilder setCountRemainder(int countRemainder) {
+//        this.countRemainder = countRemainder;
+//        return this;
+//    }
     public GlassBuilder setGlassFactoryId(int glassFactory) {
         this.glassFactory = glassFactory;
         return this;
@@ -122,7 +122,7 @@ public class GlassBuilder {
     private float insertPrice;
     private int countWh1;
     private int countWh2;
-    private int countRemainder;
+    //private int countRemainder;
     private  int glassFactory;
     private  int insertMethod;
     private int alert;
@@ -153,7 +153,7 @@ public class GlassBuilder {
         table.setPrice(price);
         table.setPriceIn(priceIn);
         table.setInsertPrice(insertPrice);
-        table.setCountRemainder(countRemainder);
+       // table.setCountRemainder(countRemainder);
         table.setCountWh1(countWh1);
         table.setCountWh2(countWh2);
 

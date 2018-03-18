@@ -1,4 +1,4 @@
-package ru.glassexpress.modules.factory;
+package ru.glassexpress.modules.select_command_factory;
 
 import ru.glassexpress.modules.RequestParser;
 import ru.glassexpress.modules.db_command.*;
@@ -9,12 +9,13 @@ import ru.glassexpress.modules.db_command.delete.DBDeleteModelCommand;
 import ru.glassexpress.modules.db_command.insert.DBInsertGenerationCommand;
 import ru.glassexpress.modules.db_command.insert.DBInsertMarkCommand;
 import ru.glassexpress.modules.db_command.insert.DBInsertModelCommand;
-import ru.glassexpress.modules.db_command.insert.DBIsertGlassCommand;
+import ru.glassexpress.modules.db_command.insert.DBInsertGlassCommand;
 import ru.glassexpress.modules.db_command.select.car.*;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassCommand;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassFactoryCommand;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassOption;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassTypeCommand;
+import ru.glassexpress.modules.db_command.update.DBUpdateGlassCommand;
 import ru.glassexpress.modules.db_command.update.DBUpdateInsertClass;
 
 public class DBCommandFactory implements DBFactoryMethod {
@@ -31,7 +32,7 @@ public class DBCommandFactory implements DBFactoryMethod {
 
         if (action.equals("list") && target.equals("mark")) {
             return new DBSelectMarkCommand();
-        } else if (action.equals("list") && target.equals("controllers")) {
+        } else if (action.equals("list") && target.equals("model")) {
             return new DBSelectModelCommand(req);
         } else if (action.equals("list") && target.equals("generation")) {
             return new DBSelectGenerationCommand(req);
@@ -50,21 +51,19 @@ public class DBCommandFactory implements DBFactoryMethod {
         } else if (action.equals("list") && target.equals("insert_class_")) {
             return new DBSelectInsertClassCommand1(req);
 
-
-
         } else if (action.equals("insert") && target.equals("mark")) {
             return new DBInsertMarkCommand(req);
-        } else if (action.equals("insert") && target.equals("controllers")) {
+        } else if (action.equals("insert") && target.equals("model")) {
             return new DBInsertModelCommand(req);
         } else if (action.equals("insert") && target.equals("generation")) {
             return new DBInsertGenerationCommand(req);
         } else if (action.equals("insert") && target.equals("glass")) {
-            return new DBIsertGlassCommand(req);
+            return new DBInsertGlassCommand(req);
 
 
         } else if (action.equals("delete") && target.equals("generation")) {
             return new DBDeleteGenerationCommand(req);
-        } else if (action.equals("delete") && target.equals("controllers")) {
+        } else if (action.equals("delete") && target.equals("model")) {
             return new DBDeleteModelCommand(req);
         } else if (action.equals("delete") && target.equals("mark")) {
             return new DBDeleteMarkCommand(req);
@@ -73,6 +72,8 @@ public class DBCommandFactory implements DBFactoryMethod {
 
         } else if (action.equals("upd") && target.equals("insert_class")) {
             return new DBUpdateInsertClass(req);
+        } else if (action.equals("upd") && target.equals("glass")) {
+            return new DBUpdateGlassCommand(req);
         }
 
         return null;

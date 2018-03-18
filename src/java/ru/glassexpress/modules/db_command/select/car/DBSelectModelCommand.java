@@ -16,7 +16,8 @@ public class DBSelectModelCommand extends DBSelectCommand {
 
     @Override
     protected void prepareStatement() throws SQLException{
-        ps.setString(1,  parser.getStringValue("mark"));
+        ps.setInt(1,  parser.getIntValue("mark"));
+        System.out.println("");
     }
     @Override
     protected void queryExecute() throws SQLException {

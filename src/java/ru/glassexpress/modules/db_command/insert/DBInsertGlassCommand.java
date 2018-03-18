@@ -1,12 +1,12 @@
 package ru.glassexpress.modules.db_command.insert;
 
 import ru.glassexpress.modules.Res;
-import ru.glassexpress.modules.db_command.DBInsertCommand;
+import ru.glassexpress.modules.db_command.DBEditCommand;
 
 import java.sql.SQLException;
 
-public class DBIsertGlassCommand extends DBInsertCommand {
-    public DBIsertGlassCommand(String request) {
+public class DBInsertGlassCommand extends DBEditCommand {
+    public DBInsertGlassCommand(String request) {
         super(Res.INSERT_GLASS, request);
     }
 

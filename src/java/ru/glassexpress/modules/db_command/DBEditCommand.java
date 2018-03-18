@@ -9,12 +9,12 @@ import ru.glassexpress.objects_DB.OkObject;
 import java.sql.*;
 import java.util.logging.Logger;
 
-public abstract class DBInsertCommand extends DBCommand{
+public abstract class DBEditCommand extends DBCommand{
 
-    public DBInsertCommand(String sql, String request) {
+    public DBEditCommand(String sql, String request) {
         super(sql, request);
     }
-    String TAG = "Isert";
+    String TAG = "EDIT";
 
     public Composite execute( ) {
 
@@ -22,7 +22,7 @@ public abstract class DBInsertCommand extends DBCommand{
             con = DBConnect.getConnection();
             if (con!=null) {
                 con.setAutoCommit(false);
-              Log2File.writeLog(request);
+                  Log2File.writeLog(request);
                 ps = con.prepareStatement(sql);
                 queryExecute();
 

@@ -28,7 +28,7 @@ public class DBSelectGlassCommand extends DBSelectCommand {
                 .setGlassTypeId(rs.getInt("id_glass_type"))
                 .setGlassOptionId(rs.getInt("id_glass_option"))
                 .setDescription(rs.getString("glass_description"))
-                .setCountRemainder(rs.getInt("alert_remainder"))
+                .setAlert(rs.getInt("alert_remainder"))
                 .setPriceIn(rs.getFloat("price_in"))
                 .setPrice(rs.getFloat("price_out"))
                 .setGlassFactoryId(rs.getInt("id_glass_factory"))

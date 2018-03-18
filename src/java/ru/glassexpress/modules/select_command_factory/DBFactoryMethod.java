@@ -1,4 +1,4 @@
-package ru.glassexpress.modules.factory;
+package ru.glassexpress.modules.select_command_factory;
 
 import ru.glassexpress.modules.db_command.DBCommand;
 

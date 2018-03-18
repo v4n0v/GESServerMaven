@@ -1,11 +1,11 @@
 package ru.glassexpress.modules.db_command.delete;
 
 import ru.glassexpress.modules.Res;
-import ru.glassexpress.modules.db_command.DBInsertCommand;
+import ru.glassexpress.modules.db_command.DBEditCommand;
 
 import java.sql.SQLException;
 
-public class DBDeleteGlassCommand extends DBInsertCommand {
+public class DBDeleteGlassCommand extends DBEditCommand {
     public DBDeleteGlassCommand(String request) {
         super(Res.DELETE_GLASS, request);
     }

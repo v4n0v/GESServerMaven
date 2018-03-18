@@ -248,11 +248,11 @@ public class GlassObject extends BaseObject {
         obj1.addProperty("priceIn", priceIn);
         obj1.addProperty("countWh1", countWh1);
         obj1.addProperty("countWh2", countWh2);
-        obj1.addProperty("glassFactory", glassFactory);
+        obj1.addProperty("glassFactoryId", glassFactory);
         obj1.addProperty("glassFactoryTitle", glassFactoryTitle);
         obj1.addProperty("insertMethod", insertMethod);
         obj1.addProperty("insertMethodTitle", insertMethodTitle);
-        obj1.addProperty("bodyType", bodyTypeId);
+        obj1.addProperty("bodyTypeId", bodyTypeId);
         obj1.addProperty("bodyTypeTitle", bodyTypeTitle);
         obj1.addProperty("optListString", optListString);
         return obj1;
