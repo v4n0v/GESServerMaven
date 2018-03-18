@@ -20,7 +20,7 @@ public class DBConnect {
 
             final String jdbcUrl = "jdbc:mysql://node148803-glass-express.jelastic.regruhosting.ru/glass_express_db";
             final String user = "root";
-            final String pass = "QXEoas47731";
+            final String pass = "QXEoas47731" ;
 
 //            properties.setProperty("characterEncoding","UTF-8");
 //            properties.setProperty("user", user);
