@@ -18,4 +18,12 @@ public class Keygen {
         }
         return sb.toString();
     }
+
+    public static void main(String[] args) {
+        try {
+            System.out.println(Keygen.generate());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
 }

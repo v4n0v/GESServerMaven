@@ -34,6 +34,11 @@ public class Res {
 
     public static final String INSERT_GLASS_PRICE = "";
 //    insert_price,
+public static final String INSERT_USER = "INSERT INTO employees " +
+        " (first_name,   last_name,    id_pos, id_salon, key_user, id_permission) \n" +
+        "  VALUES (?, ?, ?, ?, ?, ?)";
+
+
 
     public static final String SELECT_GLASS =
             "SELECT glass.id_glass, CONCAT(auto_mark.mark_title, \" \",auto_model.title_model, \" \", year_from, \"-\", year_to) AS auto, " +
@@ -66,6 +71,12 @@ public class Res {
     public static final String UPD_GLASS = "UPDATE glass SET id_glass_type=?, id_glass_option=?, glass_description=?, price_in=?, " +
             "price_out=?, alert_remainder=?, id_glass_factory=?, id_insert_method=?,  insert_price=?, " +
             "id_body_type=?, opt_list_json=? WHERE id_glass=?";
+
+    public static final String SELECT_USER_BY_KEY = "SELECT * FROM employees WHERE key_user = ?";
+    public static final String SELECT_SALONS = "SELECT * FROM salon ORDER BY id_salon ";
+    public static final String SELECT_PERMISSIONS = "SELECT * FROM emp_permissions ORDER BY id_permissions";
+        public static final String SELECT_POSITIONS = "SELECT * FROM emp_positions ORDER BY id_position";
+
 
     /// названия колонок таблицы
    // UPDATE `glass_express_db`.`glass` SET `price_out`='3000', `insert_price`='2500' WHERE `id_glass`='2';

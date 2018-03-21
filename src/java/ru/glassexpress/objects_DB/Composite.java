@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Composite extends BaseObject {
+    public List<BaseObject> getComponents() {
+        return components;
+    }
+
     private List<BaseObject> components = new ArrayList<BaseObject>();
 
     public Composite( ) {

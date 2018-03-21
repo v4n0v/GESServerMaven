@@ -4,6 +4,7 @@ import ru.glassexpress.modules.db_command.DBCommand;
 import ru.glassexpress.modules.select_command_factory.DBCommandFactory;
 import ru.glassexpress.objects_DB.Composite;
 import ru.glassexpress.objects_DB.ErrorObject;
+import ru.glassexpress.objects_DB.UserObject;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
@@ -13,7 +14,7 @@ public class ServerResponseController {
 
     String req;
 
-    public synchronized String createResponse(HttpServletRequest request) {
+    public synchronized String createResponse(HttpServletRequest request, UserObject user) {
         Composite compositeFromCommand;
         req = request.getQueryString();
         System.out.println("Incoming request: '"+req+"'");
@@ -27,22 +28,25 @@ public class ServerResponseController {
         if (req!=null) {
             DBCommandFactory factory = new DBCommandFactory();
 
-            DBCommand command = factory.createCommand(req);
+            DBCommand command = factory.createCommand(req, user);
             compositeFromCommand = command.execute();
 
             if (compositeFromCommand != null) {
                 return compositeFromCommand.toJSONObject().toString();
 
             } else {
-                compositeFromCommand = new Composite();
-                compositeFromCommand.addComponent(new ErrorObject());
-                return compositeFromCommand.toJSONObject().toString();
+                return createErrorResponse();
             }
         } else{
-            compositeFromCommand = new Composite();
-            compositeFromCommand.addComponent(new ErrorObject());
-            return compositeFromCommand.toJSONObject().toString();
+          return createErrorResponse();
         }
 
     }
+
+    public synchronized String createErrorResponse(){
+        Composite compositeFromCommand = new Composite();
+        compositeFromCommand.addComponent(new ErrorObject());
+        return compositeFromCommand.toJSONObject().toString();
+    }
+
 }

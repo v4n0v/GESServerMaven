@@ -14,13 +14,13 @@ public class DBConnect {
             Properties properties = new Properties();
 
 
-//            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
-//            String user = "root";
-//            String pass = "12345";
+            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
+            String user = "root";
+            String pass = "12345";
 
-            final String jdbcUrl = "jdbc:mysql://node148803-glass-express.jelastic.regruhosting.ru/glass_express_db";
-            final String user = "root";
-            final String pass = "QXEoas47731" ;
+//            final String jdbcUrl = "jdbc:mysql://node148803-glass-express.jelastic.regruhosting.ru/glass_express_db";
+//            final String user = "root";
+//            final String pass = "QXEoas47731" ;
 
 //            properties.setProperty("characterEncoding","UTF-8");
 //            properties.setProperty("user", user);
