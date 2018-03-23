@@ -13,11 +13,18 @@ public class DBConnect {
             Class.forName("com.mysql.jdbc.Driver");
             Properties properties = new Properties();
 
+//            // local connection
+//            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
+//            String user = "root";
+//            String pass = "12345";
 
-            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
-            String user = "root";
-            String pass = "12345";
 
+            // openshift connection
+            String jdbcUrl = "jdbc:mysql://mysql:3306/glass_express_db";
+            String user = "v4n0v";
+            String pass = "QXEoas47731";
+
+            // jelastic connection
 //            final String jdbcUrl = "jdbc:mysql://node148803-glass-express.jelastic.regruhosting.ru/glass_express_db";
 //            final String user = "root";
 //            final String pass = "QXEoas47731" ;
