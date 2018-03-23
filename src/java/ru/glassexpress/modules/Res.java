@@ -76,6 +76,7 @@ public static final String INSERT_USER = "INSERT INTO employees " +
     public static final String SELECT_SALONS = "SELECT * FROM salon ORDER BY id_salon ";
     public static final String SELECT_PERMISSIONS = "SELECT * FROM emp_permissions ORDER BY id_permissions";
         public static final String SELECT_POSITIONS = "SELECT * FROM emp_positions ORDER BY id_position";
+    public static final String SELECT_SERVICES = "SELECT * FROM service ORDER BY id_service";
 
 
     /// названия колонок таблицы

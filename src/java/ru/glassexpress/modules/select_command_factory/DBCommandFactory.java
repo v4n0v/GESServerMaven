@@ -7,6 +7,7 @@ import ru.glassexpress.modules.db_command.delete.DBDeleteGlassCommand;
 import ru.glassexpress.modules.db_command.delete.DBDeleteMarkCommand;
 import ru.glassexpress.modules.db_command.delete.DBDeleteModelCommand;
 import ru.glassexpress.modules.db_command.insert.*;
+import ru.glassexpress.modules.db_command.select.DBselectServiceCommand;
 import ru.glassexpress.modules.db_command.select.car.*;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassCommand;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassFactoryCommand;
@@ -65,6 +66,8 @@ public class DBCommandFactory implements DBFactoryMethod {
                 return new DBSelectPositionsCommand(req);
             } else if (action.equals("list") && target.equals("permis")) {
                 return new DBSelectPermissionsCommand(req);
+            } else if (action.equals("list") && target.equals("service")) {
+                return new DBselectServiceCommand(req);
             }
         } else if (action.equals("insert")) {
 
