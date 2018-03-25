@@ -35,10 +35,12 @@ public class Res {
     public static final String INSERT_GLASS_PRICE = "";
 //    insert_price,
 public static final String INSERT_USER = "INSERT INTO employees " +
-        " (first_name,   last_name,    id_pos, id_salon, key_user, id_permission) \n" +
-        "  VALUES (?, ?, ?, ?, ?, ?)";
+        " (first_name,   last_name,    id_pos, id_salon, key_user, id_permission, login) " +
+        "  VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-
+    public static final String INSERT_USER_LOGIN = "INSERT INTO logins " +
+            " (login, passHash, userKey) " +
+            "  VALUES (?, ?, ?)";
 
     public static final String SELECT_GLASS =
             "SELECT glass.id_glass, CONCAT(auto_mark.mark_title, \" \",auto_model.title_model, \" \", year_from, \"-\", year_to) AS auto, " +
@@ -73,6 +75,9 @@ public static final String INSERT_USER = "INSERT INTO employees " +
             "id_body_type=?, opt_list_json=? WHERE id_glass=?";
 
     public static final String SELECT_USER_BY_KEY = "SELECT * FROM employees WHERE key_user = ?";
+//    public static final String SELECT_USER_BY_LOGIN = "SELECT * FROM employees WHERE login = ? AND passHash = ?";
+public static final String CHECK_USER_BY_LOGIN = "SELECT * FROM logins WHERE login = ?";
+    public static final String SELECT_USER_BY_LOGIN = "SELECT userKey FROM logins WHERE login = ? AND passHash = ?";
     public static final String SELECT_SALONS = "SELECT * FROM salon ORDER BY id_salon ";
     public static final String SELECT_PERMISSIONS = "SELECT * FROM emp_permissions ORDER BY id_permissions";
         public static final String SELECT_POSITIONS = "SELECT * FROM emp_positions ORDER BY id_position";

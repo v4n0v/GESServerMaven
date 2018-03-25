@@ -31,7 +31,6 @@ import java.sql.SQLException;
                          .setPositionId(rs.getInt("id_pos"))
                          .setSalonId(rs.getInt("id_salon"))
                          .setPermission(rs.getInt("id_permission"))
-
                     .build();
 
 

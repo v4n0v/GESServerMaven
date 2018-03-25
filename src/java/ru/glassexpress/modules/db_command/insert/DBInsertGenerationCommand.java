@@ -2,6 +2,7 @@ package ru.glassexpress.modules.db_command.insert;
 
 import ru.glassexpress.modules.Res;
 import ru.glassexpress.modules.db_command.DBEditCommand;
+import ru.glassexpress.objects_DB.ErrorObject;
 
 import java.sql.SQLException;
 
@@ -18,4 +19,11 @@ public class DBInsertGenerationCommand extends DBEditCommand {
         ps.setInt(2, parser.getIntValue("yearTo"));
         ps.setInt(3, parser.getIntValue("model"));
     }
+
+
+        @Override
+        protected void sendErrorMessage() {
+            composite.addComponent(new ErrorObject("Поколение не добавлено"));
+        }
+
 }

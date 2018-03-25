@@ -31,7 +31,8 @@ public abstract class DBEditCommand extends DBCommand{
                 disconnect();
             }
         } catch (SQLException e) {
-            composite.addComponent(new ErrorObject());
+
+            sendErrorMessage();
             e.printStackTrace();
 
             return composite;
@@ -39,7 +40,7 @@ public abstract class DBEditCommand extends DBCommand{
         composite.addComponent(new OkObject());
         return composite;
     }
-
+    protected abstract void sendErrorMessage();
 
 
 }

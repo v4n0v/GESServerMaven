@@ -20,17 +20,26 @@ public class Servlet extends HttpServlet {
         //     request.setCharacterEncoding("UTF-8");
 
 
-        securityManager = new ServerSecurityController();
-        controller = new ServerResponseController();
-        UserObject user = securityManager.getUser(request.getQueryString());
-        String answerJson;
-        // проверка ключа
-        if (user!=null) {
-//        if (securityManager.isValid()) {
-            answerJson = controller.createResponse(request, user);
+        String answerJson=null;
+        String aa = request.getQueryString();   controller = new ServerResponseController();
+
+        // если не проверка логина, то проверяем ключ
+        if (!request.getParameter("action").equals("login")) {
+            UserObject user;
+            securityManager = new ServerSecurityController();
+
+
+            user = securityManager.getUser(request.getQueryString());
+            if (user!=null) {
+                answerJson = controller.createResponse(request, user);
+            } else {
+                answerJson = controller.createErrorResponse();
+            }
+          // если проверка логина, то предаем запрос с пустым пользователем. костыль ппц
         } else {
-            answerJson = controller.createErrorResponse();
+            answerJson = controller.createResponse(request, null);
         }
+
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 

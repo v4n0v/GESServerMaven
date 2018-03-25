@@ -2,6 +2,7 @@ package ru.glassexpress.modules.db_command.insert;
 
 import ru.glassexpress.modules.Res;
 import ru.glassexpress.modules.db_command.DBEditCommand;
+import ru.glassexpress.objects_DB.ErrorObject;
 
 import java.sql.SQLException;
 
@@ -29,6 +30,10 @@ public class DBInsertGlassCommand extends DBEditCommand {
         System.out.println(parser.getStringValue("optListString"));
     }
 
+    @Override
+    protected void sendErrorMessage() {
+        composite.addComponent(new ErrorObject("Стекло не добавлено"));
+    }
 }
 
 //   .setRequest("id_auto", String.valueOf(glass.getCarId()))

@@ -14,4 +14,9 @@ public class DBDeleteModelCommand  extends DBEditCommand {
     protected void queryExecute() throws SQLException {
         ps.setInt(1, parser.getIntValue("id"));
     }
+
+    @Override
+    protected void sendErrorMessage() {
+
+    }
 }

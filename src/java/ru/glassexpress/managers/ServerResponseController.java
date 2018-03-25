@@ -45,7 +45,7 @@ public class ServerResponseController {
 
     public synchronized String createErrorResponse(){
         Composite compositeFromCommand = new Composite();
-        compositeFromCommand.addComponent(new ErrorObject());
+        compositeFromCommand.addComponent(new ErrorObject("Ошибка чтения элемента из базы"));
         return compositeFromCommand.toJSONObject().toString();
     }
 

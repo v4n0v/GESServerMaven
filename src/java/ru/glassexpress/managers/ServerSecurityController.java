@@ -1,5 +1,6 @@
 package ru.glassexpress.managers;
 
+import ru.glassexpress.modules.db_command.select.user.DBSelectUserByLoginCommand;
 import ru.glassexpress.modules.db_command.select.user.DBUserByKeyCommand;
 import ru.glassexpress.objects_DB.Composite;
 import ru.glassexpress.objects_DB.UserObject;
@@ -27,7 +28,13 @@ public class ServerSecurityController implements SecurityManagerInterface {
         UserObject user = (UserObject) composite.getComponents().get(0);
         return user;
     }
+    public UserObject getUserByLogin(String req) {
 
+        DBSelectUserByLoginCommand command = new DBSelectUserByLoginCommand(req);
+        Composite composite = command.execute();
+        UserObject user = (UserObject) composite.getComponents().get(0);
+        return user;
+    }
     public void validate() {
         System.out.println("валидация");
     }
