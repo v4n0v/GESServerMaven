@@ -26,17 +26,17 @@ public class Res {
             "price_out, alert_remainder, id_glass_factory, id_insert_method,  insert_price, " +
             "id_body_type, opt_list_json) " +
             "VALUES (?, ?, ?, ?, ?," +
-                   " ?, ?, ?, ?, ?, " +
-                    "?, ?)";
+            " ?, ?, ?, ?, ?, " +
+            "?, ?)";
 
 
     public static final String INSERT_GLASS_OPT = "INSERT INTO glass_option_list (id_glass, id_glass_option) VALUES (?, ?)";
 
     public static final String INSERT_GLASS_PRICE = "";
-//    insert_price,
-public static final String INSERT_USER = "INSERT INTO employees " +
-        " (first_name,   last_name,    id_pos, id_salon, key_user, id_permission, login) " +
-        "  VALUES (?, ?, ?, ?, ?, ?, ?)";
+    //    insert_price,
+    public static final String INSERT_USER = "INSERT INTO employees " +
+            " (first_name,   last_name,    id_pos, id_salon, key_user, id_permission, login) " +
+            "  VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     public static final String INSERT_USER_LOGIN = "INSERT INTO logins " +
             " (login, passHash, userKey) " +
@@ -75,16 +75,21 @@ public static final String INSERT_USER = "INSERT INTO employees " +
             "id_body_type=?, opt_list_json=? WHERE id_glass=?";
 
     public static final String SELECT_USER_BY_KEY = "SELECT * FROM employees WHERE key_user = ?";
-//    public static final String SELECT_USER_BY_LOGIN = "SELECT * FROM employees WHERE login = ? AND passHash = ?";
-public static final String CHECK_USER_BY_LOGIN = "SELECT * FROM logins WHERE login = ?";
+    //    public static final String SELECT_USER_BY_LOGIN = "SELECT * FROM employees WHERE login = ? AND passHash = ?";
+    public static final String CHECK_USER_BY_LOGIN = "SELECT * FROM logins WHERE login = ?";
     public static final String SELECT_USER_BY_LOGIN = "SELECT userKey FROM logins WHERE login = ? AND passHash = ?";
     public static final String SELECT_SALONS = "SELECT * FROM salon ORDER BY id_salon ";
     public static final String SELECT_PERMISSIONS = "SELECT * FROM emp_permissions ORDER BY id_permissions";
-        public static final String SELECT_POSITIONS = "SELECT * FROM emp_positions ORDER BY id_position";
+    public static final String SELECT_POSITIONS = "SELECT * FROM emp_positions ORDER BY id_position";
     public static final String SELECT_SERVICES = "SELECT * FROM service ORDER BY id_service";
 
+    public static final String SELECT_EMPLOYEES = "SELECT * FROM employees WHERE id_permission=3 AND id_salon=?";
 
+    public static final String GET_LAST_DAY = "SELECT * FROM day WHERE day_date=(SELECT MAX(day_date) FROM day WHERE id_salon  = ?) LIMIT 1; ";
+//    public static final String GET_LAST_DAY = "SELECT * FROM day WHERE id_salon  = ? LIMIT 1";
+
+    public static final String INSERT_NEW_DAY  = "INSERT INTO day (day_date, emp_list_json, id_admin,  id_salon) VALUES (?, ?, ?, ?)";
     /// названия колонок таблицы
-   // UPDATE `glass_express_db`.`glass` SET `price_out`='3000', `insert_price`='2500' WHERE `id_glass`='2';
+    // UPDATE `glass_express_db`.`glass` SET `price_out`='3000', `insert_price`='2500' WHERE `id_glass`='2';
 
 }

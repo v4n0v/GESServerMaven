@@ -7,6 +7,7 @@ import ru.glassexpress.modules.db_command.delete.DBDeleteGlassCommand;
 import ru.glassexpress.modules.db_command.delete.DBDeleteMarkCommand;
 import ru.glassexpress.modules.db_command.delete.DBDeleteModelCommand;
 import ru.glassexpress.modules.db_command.insert.*;
+import ru.glassexpress.modules.db_command.select.DBSelectLastDayCommand;
 import ru.glassexpress.modules.db_command.select.DBselectServiceCommand;
 import ru.glassexpress.modules.db_command.select.car.*;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassCommand;
@@ -50,7 +51,10 @@ public class DBCommandFactory implements DBFactoryMethod {
             switch (target) {
                 case "user":
                     return new DBUserByKeyCommand(req);
-
+                case "emp":
+                    return new DBSelectEmployesCommand(req);
+                case "last_day":
+                    return new DBSelectLastDayCommand(req);
                 case "mark":
                     return new DBSelectMarkCommand();
                 case "model":
@@ -127,6 +131,8 @@ public class DBCommandFactory implements DBFactoryMethod {
                 return new DBInsertGlassCommand(req);
             } else if ( target.equals("user") && user.getPermission() == 1) {
                 return new DBInsertUserCommand(req);
+            } else if ( target.equals("day") && (user.getPermission() == 1 ||user.getPermission() == 2  )) {
+                return new DBInserNewDayCommand(req);
             }
         } else if (action.equals("delete") && user.getPermission() == 1)
 
@@ -140,9 +146,7 @@ public class DBCommandFactory implements DBFactoryMethod {
             } else if (target.equals("glass")) {
                 return new DBDeleteGlassCommand(req);
             }
-        } else if (action.equals("upd"))
-
-        {
+        } else if (action.equals("upd")) {
             if (target.equals("insert_class")) {
                 return new DBUpdateInsertClass(req);
             } else if (target.equals("glass") && user.getPermission() == 1) {

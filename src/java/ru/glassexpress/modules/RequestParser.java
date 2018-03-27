@@ -1,9 +1,7 @@
 package ru.glassexpress.modules;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
+import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class RequestParser {
@@ -30,6 +28,16 @@ public class RequestParser {
     public int getIntValue(String key){
 
         return Integer.parseInt(requestMap.get(key));
+    }
+    public Date getDateValue(String key){
+        Date date = new Date();
+        date.setTime(Long.parseLong(requestMap.get(key)));
+        return date;
+    }
+
+    public long getLongValue(String key){
+
+        return Long.parseLong(requestMap.get(key));
     }
 
     public String getStringValue(String key){

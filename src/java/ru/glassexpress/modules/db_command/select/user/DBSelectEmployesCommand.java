@@ -2,24 +2,19 @@ package ru.glassexpress.modules.db_command.select.user;
 
 import ru.glassexpress.modules.Res;
 import ru.glassexpress.modules.db_command.DBSelectCommand;
-import ru.glassexpress.objects_DB.IdTitleObj;
 import ru.glassexpress.objects_DB.UserObject;
 import ru.glassexpress.objects_DB.builders.UserBuilder;
 
 import java.sql.SQLException;
 
-
-public class DBUserByKeyCommand extends DBSelectCommand {
-
-    public DBUserByKeyCommand(String request) {
-        super(Res.SELECT_USER_BY_KEY, request);
+public class DBSelectEmployesCommand extends DBSelectCommand {
+    public DBSelectEmployesCommand(String request) {
+        super(Res.SELECT_EMPLOYEES, request);
     }
-
 
     @Override
     protected void prepareStatement() throws SQLException {
-        ps.setInt(1, parser.getStringValue("key").hashCode());
-        System.out.println("");
+        ps.setInt(1, parser.getIntValue("id_salon"));
     }
 
     @Override
@@ -34,8 +29,7 @@ public class DBUserByKeyCommand extends DBSelectCommand {
                 .build();
 
 
+
         composite.addComponent(user);
     }
-
-
 }
