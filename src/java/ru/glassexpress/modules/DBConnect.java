@@ -29,6 +29,13 @@ public class DBConnect {
 //            final String user = "root";
 //            final String pass = "QXEoas47731" ;
 
+
+            // timeweb connection
+//            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
+//            String user = "root";
+//            String pass = "QXEoas47731";
+
+
 //            properties.setProperty("characterEncoding","UTF-8");
 //            properties.setProperty("user", user);
 //            properties.setProperty("password", pass);

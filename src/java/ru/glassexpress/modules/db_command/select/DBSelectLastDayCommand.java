@@ -14,10 +14,13 @@ public class DBSelectLastDayCommand extends DBSelectCommand {
     @Override
     protected void prepareStatement() throws SQLException {
         ps.setInt(1, parser.getIntValue("id_salon"));
+        ps.setInt(2, parser.getIntValue("id_salon"));
     }
 
     @Override
     protected void queryExecute() throws SQLException {
-        composite.addComponent(new DateObject(rs.getInt("id_day"), rs.getDate("day_date"), rs.getString("emp_list_json"), rs.getInt("id_admin"), rs.getInt("id_salon")));
+        DateObject day  =new DateObject(rs.getInt("id_day"), rs.getDate("day_date"), rs.getString("emp_list_json"), rs.getInt("id_admin"), rs.getInt("id_salon"));
+        composite.addComponent(day);
+
     }
 }

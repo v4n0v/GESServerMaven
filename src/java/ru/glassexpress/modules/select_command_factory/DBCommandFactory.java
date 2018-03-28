@@ -15,8 +15,7 @@ import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassFactoryComma
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassOption;
 import ru.glassexpress.modules.db_command.select.glass.DBSelectGlassTypeCommand;
 import ru.glassexpress.modules.db_command.select.user.*;
-import ru.glassexpress.modules.db_command.update.DBUpdateGlassCommand;
-import ru.glassexpress.modules.db_command.update.DBUpdateInsertClass;
+import ru.glassexpress.modules.db_command.update.*;
 import ru.glassexpress.objects_DB.UserObject;
 
 public class DBCommandFactory implements DBFactoryMethod {
@@ -53,6 +52,8 @@ public class DBCommandFactory implements DBFactoryMethod {
                     return new DBUserByKeyCommand(req);
                 case "emp":
                     return new DBSelectEmployesCommand(req);
+                case "emps":
+                    return new DBSelectAllEmployesCommand(req);
                 case "last_day":
                     return new DBSelectLastDayCommand(req);
                 case "mark":
@@ -123,15 +124,15 @@ public class DBCommandFactory implements DBFactoryMethod {
 
             if (target.equals("mark") && (user.getPermission() == 1 || user.getPermission() == 2)) {
                 return new DBInsertMarkCommand(req);
-            } else if ( target.equals("model") && (user.getPermission() == 1 || user.getPermission() == 2)) {
+            } else if (target.equals("model") && (user.getPermission() == 1 || user.getPermission() == 2)) {
                 return new DBInsertModelCommand(req);
-            } else if ( target.equals("generation") && (user.getPermission() == 1 || user.getPermission() == 2)) {
+            } else if (target.equals("generation") && (user.getPermission() == 1 || user.getPermission() == 2)) {
                 return new DBInsertGenerationCommand(req);
-            } else if ( target.equals("glass") && (user.getPermission() == 1 || user.getPermission() == 2)) {
+            } else if (target.equals("glass") && (user.getPermission() == 1 || user.getPermission() == 2)) {
                 return new DBInsertGlassCommand(req);
-            } else if ( target.equals("user") && user.getPermission() == 1) {
+            } else if (target.equals("user") && user.getPermission() == 1) {
                 return new DBInsertUserCommand(req);
-            } else if ( target.equals("day") && (user.getPermission() == 1 ||user.getPermission() == 2  )) {
+            } else if (target.equals("day") && (user.getPermission() == 1 || user.getPermission() == 2)) {
                 return new DBInserNewDayCommand(req);
             }
         } else if (action.equals("delete") && user.getPermission() == 1)
@@ -151,6 +152,17 @@ public class DBCommandFactory implements DBFactoryMethod {
                 return new DBUpdateInsertClass(req);
             } else if (target.equals("glass") && user.getPermission() == 1) {
                 return new DBUpdateGlassCommand(req);
+            } else if (target.equals("generation") && user.getPermission() == 1) {
+                return new DBUpdateCar(req);
+
+            } else if (target.equals("model") && user.getPermission() == 1) {
+                return new DBUpdateModelCommand(req);
+            } else if (target.equals("mark") && user.getPermission() == 1) {
+                return new DBUpdateMarkCommand(req);
+            } else if (target.equals("usrlogin") && user.getPermission() == 1) {
+                return new DBUpdateUserLogin(req);
+            } else if (target.equals("usrpass") && user.getPermission() == 1) {
+                return new DBUpdateUserPass(req);
             }
         }
         return null;

@@ -74,6 +74,12 @@ public class Res {
             "price_out=?, alert_remainder=?, id_glass_factory=?, id_insert_method=?,  insert_price=?, " +
             "id_body_type=?, opt_list_json=? WHERE id_glass=?";
 
+    public static final String UPD_GENERATION = "UPDATE car SET year_from=?, year_to=? WHERE id_car=?";
+    public static final String UPD_MODEL = "UPDATE auto_model SET title_model=? WHERE id_auto_model=?";
+    public static final String UPD_MARK = "UPDATE auto_mark SET mark_title=? WHERE id_auto_mark=?";
+    public static final String UPD_LOGIN_EMP = "UPDATE employees SET login=? WHERE id_emp=?";
+    public static final String UPD_LOGIN_USER = "UPDATE logins SET login=? WHERE login=(SELECT login from employees WHERE id_emp=?)";
+    public static final String UPD_PASS = "UPDATE logins SET passHash=? WHERE login=?";
     public static final String SELECT_USER_BY_KEY = "SELECT * FROM employees WHERE key_user = ?";
     //    public static final String SELECT_USER_BY_LOGIN = "SELECT * FROM employees WHERE login = ? AND passHash = ?";
     public static final String CHECK_USER_BY_LOGIN = "SELECT * FROM logins WHERE login = ?";
@@ -85,10 +91,14 @@ public class Res {
 
     public static final String SELECT_EMPLOYEES = "SELECT * FROM employees WHERE id_permission=3 AND id_salon=?";
 
-    public static final String GET_LAST_DAY = "SELECT * FROM day WHERE day_date=(SELECT MAX(day_date) FROM day WHERE id_salon  = ?) LIMIT 1; ";
+    public static final String GET_LAST_DAY = "SELECT * FROM day WHERE day_date=(SELECT MAX(day_date) FROM day WHERE id_salon  = ?)  AND id_salon  = ?  LIMIT 1; ";
 //    public static final String GET_LAST_DAY = "SELECT * FROM day WHERE id_salon  = ? LIMIT 1";
 
     public static final String INSERT_NEW_DAY  = "INSERT INTO day (day_date, emp_list_json, id_admin,  id_salon) VALUES (?, ?, ?, ?)";
+    public static final String SELECT_USERS = "SELECT * from employees ORDER BY id_salon";
+
+
+
     /// названия колонок таблицы
     // UPDATE `glass_express_db`.`glass` SET `price_out`='3000', `insert_price`='2500' WHERE `id_glass`='2';
 

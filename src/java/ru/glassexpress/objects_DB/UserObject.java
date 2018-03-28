@@ -4,6 +4,8 @@ import com.google.gson.JsonElement;
 
 public class UserObject extends BaseObject{
 
+    private String login;
+
     public UserObject () {
         super("user");
 
@@ -104,6 +106,11 @@ public class UserObject extends BaseObject{
         obj1.addProperty("salonId", salonId);
         obj1.addProperty("salonTitle", salonTitle);
         obj1.addProperty("permission", permission);
+        obj1.addProperty("login", login);
         return obj1;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 }

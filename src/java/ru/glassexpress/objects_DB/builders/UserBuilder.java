@@ -5,11 +5,16 @@ import ru.glassexpress.objects_DB.UserObject;
 
 public class UserBuilder {
 
+    private String login;
+
     public UserBuilder setId(int id) {
         this.id = id;
         return this;
     }
-
+    public UserBuilder setLogin(String login) {
+        this.login = login;
+        return this;
+    }
     public UserBuilder setName(String name) {
         this.name = name;
         return this;
@@ -57,7 +62,7 @@ public class UserBuilder {
         object.setSalonId(salonId);
         object.setSalonTitle(salonTitle);
         object.setPermission(permission);
-
+        object.setLogin(login);
         return object;
     }
     private int id;
