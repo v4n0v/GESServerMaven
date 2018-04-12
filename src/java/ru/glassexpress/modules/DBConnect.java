@@ -14,9 +14,9 @@ public class DBConnect {
             Properties properties = new Properties();
 
             // local connection
-            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
-            String user = "root";
-            String pass = "12345";
+//            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
+//            String user = "root";
+//            String pass = "12345";
 
 
             // openshift connection
@@ -31,10 +31,10 @@ public class DBConnect {
 
 
             // timeweb connection
-//            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
-//            String user = "root";
+            String jdbcUrl = "jdbc:mysql://localhost:3306/glass_express_db";
+            String user = "root";
 //            String pass = "QXEoas47731";
-
+            String pass = "12345";
 
 //            properties.setProperty("characterEncoding","UTF-8");
 //            properties.setProperty("user", user);

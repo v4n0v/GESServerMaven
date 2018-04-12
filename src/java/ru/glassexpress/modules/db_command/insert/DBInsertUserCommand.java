@@ -20,6 +20,7 @@ public class DBInsertUserCommand extends DBEditCommand {
         ps.setInt(5, parser.getStringValue("key_user").hashCode());
         ps.setInt(6, parser.getIntValue("id_permission"));
         ps.setString(7, parser.getStringValue("login"));
+        ps.setString(8, parser.getStringValue("mail"));
       //  ps.setString(8, parser.getStringValue("user_key"));
         ps.executeUpdate();
         ps = con.prepareStatement(Res.INSERT_USER_LOGIN);

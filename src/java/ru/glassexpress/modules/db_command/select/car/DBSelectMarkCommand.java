@@ -14,6 +14,7 @@ public class DBSelectMarkCommand extends DBSelectCommand {
     @Override
     protected void queryExecute() throws SQLException {
         composite.addComponent(new IdTitleObj(rs.getInt("id_auto_mark"), rs.getString("mark_title")));
+        list.add(new IdTitleObj(rs.getInt("id_auto_mark"), rs.getString("mark_title")));
     }
 
     @Override

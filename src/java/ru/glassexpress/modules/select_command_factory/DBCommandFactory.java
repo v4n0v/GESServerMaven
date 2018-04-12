@@ -2,10 +2,7 @@ package ru.glassexpress.modules.select_command_factory;
 
 import ru.glassexpress.modules.RequestParser;
 import ru.glassexpress.modules.db_command.*;
-import ru.glassexpress.modules.db_command.delete.DBDeleteGenerationCommand;
-import ru.glassexpress.modules.db_command.delete.DBDeleteGlassCommand;
-import ru.glassexpress.modules.db_command.delete.DBDeleteMarkCommand;
-import ru.glassexpress.modules.db_command.delete.DBDeleteModelCommand;
+import ru.glassexpress.modules.db_command.delete.*;
 import ru.glassexpress.modules.db_command.insert.*;
 import ru.glassexpress.modules.db_command.select.DBSelectLastDayCommand;
 import ru.glassexpress.modules.db_command.select.DBselectServiceCommand;
@@ -135,18 +132,24 @@ public class DBCommandFactory implements DBFactoryMethod {
             } else if (target.equals("day") && (user.getPermission() == 1 || user.getPermission() == 2)) {
                 return new DBInserNewDayCommand(req);
             }
-        } else if (action.equals("delete") && user.getPermission() == 1)
+        } else if (action.equals("delete") && user.getPermission() == 1) {
 
-        {
-            if (target.equals("generation")) {
-                return new DBDeleteGenerationCommand(req);
-            } else if (target.equals("model")) {
-                return new DBDeleteModelCommand(req);
-            } else if (target.equals("mark")) {
-                return new DBDeleteMarkCommand(req);
-            } else if (target.equals("glass")) {
-                return new DBDeleteGlassCommand(req);
+            switch (target) {
+                case "generation":
+                    return new DBDeleteGenerationCommand(req);
+                case "model":
+                    return new DBDeleteModelCommand(req);
+                case "mark":
+                    return new DBDeleteMarkCommand(req);
+                case "glass":
+                    return new DBDeleteGlassCommand(req);
+                case "user":
+                    return new DBDeleteUserCommand(req);
+                default:
+                      break;
+
             }
+
         } else if (action.equals("upd")) {
             if (target.equals("insert_class")) {
                 return new DBUpdateInsertClass(req);

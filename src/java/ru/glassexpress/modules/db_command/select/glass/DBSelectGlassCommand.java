@@ -14,14 +14,14 @@ public class DBSelectGlassCommand extends DBSelectCommand {
 
     @Override
     protected void prepareStatement() throws SQLException {
-        ps.setString(1,  parser.getStringValue("car"));
+        ps.setInt(1,  parser.getIntValue("car"));
 
     }
 
     @Override
     protected void queryExecute() throws SQLException {
         System.out.println(rs.getString("auto"));
-        GlassObject table = new GlassBuilder()
+        GlassObject glass = new GlassBuilder()
                 .setId(rs.getInt("id_glass"))
                 .setCarId(rs.getInt("id_car"))
                 .setCarTitle(rs.getString("auto"))
@@ -44,6 +44,7 @@ public class DBSelectGlassCommand extends DBSelectCommand {
                 .build();
 
 
-        composite.addComponent(table);
+
+        composite.addComponent(glass);
     }
 }

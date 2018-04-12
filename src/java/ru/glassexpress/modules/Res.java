@@ -35,8 +35,8 @@ public class Res {
     public static final String INSERT_GLASS_PRICE = "";
     //    insert_price,
     public static final String INSERT_USER = "INSERT INTO employees " +
-            " (first_name,   last_name,    id_pos, id_salon, key_user, id_permission, login) " +
-            "  VALUES (?, ?, ?, ?, ?, ?, ?)";
+            " (first_name,   last_name,    id_pos, id_salon, key_user, id_permission, login, mail) " +
+            "  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     public static final String INSERT_USER_LOGIN = "INSERT INTO logins " +
             " (login, passHash, userKey) " +
@@ -67,6 +67,9 @@ public class Res {
     public static final String DELETE_GENERATION = "DELETE FROM car WHERE id_car = ?";
     public static final String DELETE_MODEL = "DELETE FROM auto_model WHERE id_auto_model = ?";
     public static final String DELETE_MARK = "DELETE FROM auto_mark WHERE id_auto_mark = ?";
+    public static final String DELETE_USER = "UPDATE employees SET id_permission=4, id_pos=5 WHERE id_emp=?";
+//    public static final String DELETE_USER = "DELETE FROM employees WHERE id_emp = ?";
+//    public static final String DELETE_LOGIN = "DELETE FROM logins WHERE login =(SELECT login from employees WHERE id_emp=?)";
 
     public static final String UPD_CAR_INSERT_CLASS = "UPDATE `glass_express_db`.`car` SET id_auto_insert_class=? WHERE id_car=?";
     public static final String DELETE_GLASS = "DELETE FROM glass WHERE id_glass = ?";
