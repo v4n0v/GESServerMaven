@@ -38,17 +38,17 @@ public class ServerResponseController {
             compositeFromCommand = command.execute();
 
             if (compositeFromCommand != null) {
-                List<BaseObject> list = compositeFromCommand.getComponents();
-                JsonArray arr = new JsonArray();
-
-                for (BaseObject component: list){
-
-                    arr.add( component.toJSONObject());
-                }
-
-                String s = arr.toString();
-                return arr.toString();
-//                return compositeFromCommand.toJSONObject().toString();
+//                List<BaseObject> list = compositeFromCommand.getComponents();
+//                JsonArray arr = new JsonArray();
+//
+//                for (BaseObject component: list){
+//
+//                    arr.add( component.toJSONObject());
+//                }
+//
+//                String s = arr.toString();
+//                return arr.toString();
+                return compositeFromCommand.toJSONObject().toString();
 
             } else {
                 return createErrorResponse();
